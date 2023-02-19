@@ -1,0 +1,150 @@
+@charset "UTF-8";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url(../img/fundo2.png);    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+}
+.logo{
+    width: 120px;
+    margin-left: 20px;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: auto;
+    margin: 0px 5%;
+    flex-wrap: wrap; 
+    padding: 80px;
+}
+/*CAIXA CARD*/
+.caixa-card{
+    height: 400px;
+    width: 320px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin: 15px;
+  }
+/*CARD*/
+.caixa-card .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    transform: translateY(0deg);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+    transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1); 
+  }
+  /*ROTAÇÃO DO CARD DA FRENTE*/
+.caixa-card:hover > .front-face{
+    transform: rotateY(-180deg);
+  }
+  /*TAMANHO DA IMG CARD-FRENTE*/
+.caixa-card .card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  /*FORMATAÇÃO DO CONTEUDO DO CARD ATRÁZ*/
+.caixa-card .back-face{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transform: rotateY(180deg);
+  }
+/*ROTAÇÃO DO CARD DE TRÁZ*/
+.caixa-card:hover > .back-face{
+    transform: rotateY(0deg);
+  }
+/*FORMATAÇÃO DA IMG DE TRAZ*/
+.caixa-card .back-face img{
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(375deg,  #df2969af, #cda4c5c0);  
+  }
+/*FORMATAÇÃO DO TEXTO*/
+.caixa-card .back-face .inform{
+    text-align: center;
+  }
+.back-face .inform .title{
+    font-size: 30px;
+    font-weight: 500;
+  }
+/*ICONES*/
+.back-face ul{
+    display: flex;
+  }
+.back-face ul a{
+    display: block;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    margin: 0 5px;
+    line-height: 38px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(375deg,  #df2969af, #cda4c5c0);  
+    transition: all 0.5s ease;
+  }
+.back-face ul a:hover{
+    color: #df2969af;
+    border-color:#df2969af;
+    background: linear-gradient(375deg, transparent, transparent);
+  }
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #000;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 10%;
+    padding-bottom: 150px;
+    background-color: transparent;
+}
+@media screen and  (max-width: 414px) {
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 100px;
+  }
+  .logo{
+    width: 100px;
+    margin: 0px;
+}
+  main{
+    padding: 10px;
+  }
+  footer{
+    padding-bottom: 50px;
+    font-size: 1rem;
+  }
+
+}
